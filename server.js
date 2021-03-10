@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to database before starting server
 mongoose.connection.once("open", function () {
-    console.log("Connected to the database");
+    console.log(`Connected to the database ${this.name}`);
     app.listen(PORT, () => {
         console.log(`Listening on PORT ${PORT}`);
     });
