@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
 const build = path.resolve(__dirname, "client", "build");
@@ -19,8 +20,16 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-// Green light
-app.listen(PORT, function () {
-    console.log(`Listening on PORT ${PORT}`);
-    require("./ai");
+// Connect to database before starting server
+mongoose.connection.once("open", function () {
+    console.log("Connected to the database");
+    app.listen(PORT, () => {
+        console.log(`Listening on PORT ${PORT}`);
+    });
+});
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
