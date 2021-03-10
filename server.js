@@ -3,7 +3,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
-const localDb = "googlebooks";
 const build = path.resolve(__dirname, "client", "build");
 
 var app = express();
@@ -23,13 +22,13 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to database before starting server
 mongoose.connection.once("open", function () {
-    console.log(`Connected to the database ${localDb}`);
+    console.log("Connected to the database");
     app.listen(PORT, () => {
         console.log(`Listening on PORT ${PORT}`);
     });
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/" + localDb, {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
