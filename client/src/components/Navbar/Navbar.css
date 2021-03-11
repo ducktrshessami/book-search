@@ -1,5 +1,7 @@
 nav {
     height: 10vh;
+    padding-left: 1vw;
+    border: black 3px solid;
 }
 
 .logo {
@@ -12,4 +14,8 @@ nav {
 
 .active {
     font-weight: bold;
+}
+
+.nav-link {
+    padding-top: 2.25rem!important;
 }

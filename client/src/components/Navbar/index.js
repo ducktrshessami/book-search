@@ -14,12 +14,12 @@ export default function Navbar() {
             </Link>
             <Switch>
                 <Route path="/saved">
-                    <Link to="/">Search</Link>
-                    <div className="active">Saved</div>
+                    <Link to="/" className="nav-link">Search</Link>
+                    <div className="active nav-link">Saved</div>
                 </Route>
                 <Route path="/">
-                    <div className="active">Search</div>
-                    <Link to="/saved">Saved</Link>
+                    <div className="active nav-link">Search</div>
+                    <Link to="/saved" className="nav-link">Saved</Link>
                 </Route>
             </Switch>
         </nav>
