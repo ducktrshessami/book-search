@@ -8,7 +8,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
     return (
-        <nav className="row">
+        <nav className="black-border row">
             <Link to="/" className="logo">
                 <img src={logo} alt="Google Books" />
             </Link>
