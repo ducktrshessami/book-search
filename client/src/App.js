@@ -5,12 +5,14 @@ import {
 } from "react-router-dom";
 import Saved from "./pages/Saved";
 import Search from "./pages/Search";
+import Header from "./components/Header";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Switch>
           <Route path="/saved">
             <Saved />
