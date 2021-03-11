@@ -1,6 +1,6 @@
 import phin from "phin";
 
-export default {
+const API = {
     get: function () {
         return phin({
             url: "/api/books",
@@ -24,3 +24,5 @@ export default {
         });
     }
 };
+
+export default API;
