@@ -6,6 +6,7 @@ import {
 import Saved from "./pages/Saved";
 import Search from "./pages/Search";
 import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 function App() {
