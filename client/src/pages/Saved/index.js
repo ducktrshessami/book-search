@@ -13,7 +13,7 @@ export default class Saved extends Component {
 
     render() {
         return (
-            <BookList title="Saved Books" books={this.state.books} />
+            <BookList title="Saved Books" saved={true} books={this.state.books} />
         );
     }
 };
