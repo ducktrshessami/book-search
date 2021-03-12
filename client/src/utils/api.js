@@ -1,8 +1,12 @@
 import fetch from "node-fetch";
 
 const API = {
-    get: function () {
-        return fetch("/api/books")
+    get: function (options) {
+        let url = "/api/books";
+        for (let col in options) {
+            url += `${(url.includes("?") ? "&" : "?")}${col}=${options[col]}`;
+        }
+        return fetch(url)
             .then(res => res.json());
     },
     post: function (book) {
