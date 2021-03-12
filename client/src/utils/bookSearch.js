@@ -1,11 +1,8 @@
-import phin from "phin";
+import fetch from "node-fetch";
 
 export default function bookSearch(query, startIndex = 0, maxResults = 10) {
-    return phin({
-        url: `https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=${startIndex}&maxResults=${maxResults}`,
-        parse: "json"
-    })
-        .then(res => res.body)
+    return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=${startIndex}&maxResults=${maxResults}`)
+        .then(res => res.json())
         .then(({ totalItems, items }) => ({
             totalItems,
             items: items.map(({ volumeInfo }) => ({
