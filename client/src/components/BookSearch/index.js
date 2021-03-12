@@ -7,7 +7,7 @@ export default function BookSearch({ onSubmit }) {
     }
 
     return (
-        <div className="book-search black-border m-5 p-5">
+        <div className="book-search black-border m-5 pt-5 px-5">
             <h5>Book Search</h5>
             <br />
             <form onSubmit={submitWrapper}>
