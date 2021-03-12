@@ -6,10 +6,10 @@ export default function bookSearch(query, startIndex = 0, maxResults = 10) {
         .then(({ totalItems, items }) => ({
             totalItems,
             items: items.map(({ volumeInfo }) => ({
-                title: volumeInfo.title,
-                authors: volumeInfo.authors,
-                description: volumeInfo.description,
-                image: volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : "https://via.placeholder.com/100x150",
+                title: volumeInfo.title || "",
+                authors: volumeInfo.authors || [],
+                description: volumeInfo.description || "",
+                image: volumeInfo.imageLinks ? (volumeInfo.imageLinks.thumbnail || "https://via.placeholder.com/100x150") : "https://via.placeholder.com/100x150",
                 link: volumeInfo.infoLink
             }))
         }));
