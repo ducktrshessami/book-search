@@ -38,6 +38,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://localhost:3001",
+  "proxy": "http://localhost:3001",
   "homepage": "https://duck-book-search.herokuapp.com/"
 }
