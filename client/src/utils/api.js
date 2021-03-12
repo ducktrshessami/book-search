@@ -1,27 +1,20 @@
-import phin from "phin";
+import fetch from "node-fetch";
 
 const API = {
     get: function () {
-        return phin({
-            url: "/api/books",
-            parse: "json"
-        })
-            .then(res => res.body);
+        return fetch("/api/books")
+            .then(res => res.json());
     },
     post: function (book) {
-        return phin({
-            url: "/api/books",
-            parse: "json",
+        return fetch("/api/books", {
             method: "post",
-            data: book
+            body: JSON.stringify(book),
+            headers: { "Content-Type": "application/json" }
         })
-            .then(res => res.body);
+            .then(res => res.json());
     },
     delete: function (id) {
-        return phin({
-            url: "/api/books/" + id,
-            method: "delete"
-        });
+        return fetch("/api/books/" + id, { method: "delete" });
     }
 };
 
