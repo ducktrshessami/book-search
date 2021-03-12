@@ -7,7 +7,7 @@ export default function BookList({ title, books, saved }) {
             <h5>{title}</h5>
             <br />
             <ul className="book-list">
-                {books.map(item => <Book key={item.link} {...item} />)}
+                {books.map(item => <Book key={item.link} saved={saved} {...item} />)}
             </ul>
         </section>
     );
