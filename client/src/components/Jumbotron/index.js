@@ -1,5 +1,3 @@
-import "./Jumbotron.css";
-
 export default function Jumbotron() {
     return (
         <article className="black-border text-center m-5 p-5">
