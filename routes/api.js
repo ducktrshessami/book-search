@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = function (app) {
     app.get("/api/books", function (req, res) {
-        db.Book.find()
+        db.Book.find(req.query)
             .then(books => res.status(200).json(books))
             .catch(err => {
                 console.error(err);
