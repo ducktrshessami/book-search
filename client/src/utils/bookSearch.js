@@ -9,7 +9,7 @@ export default function bookSearch(query, startIndex = 0, maxResults = 10) {
                 title: volumeInfo.title,
                 authors: volumeInfo.authors,
                 description: volumeInfo.description,
-                image: volumeInfo.imageLinks.thumbnail,
+                image: volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : "https://via.placeholder.com/100x150",
                 link: volumeInfo.infoLink
             }))
         }));
